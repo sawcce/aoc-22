@@ -17,8 +17,6 @@ fn main() {
 
     let input = read_to_string(path).unwrap();
 
-    //let count = HashMap::new();
-
     /* Part 1 */
     let sum = input
         .lines()
