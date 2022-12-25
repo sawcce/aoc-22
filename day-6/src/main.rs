@@ -1,15 +1,17 @@
 use std::fs::read_to_string;
+use std::env::args;
 
 fn main() -> Result<(), &'static str> {
-    let input = read_to_string("input.txt").unwrap();
+    let path = args().nth(1).unwrap_or("input.txt".to_string());
+    let input = read_to_string(path).unwrap();
 
     // Part 1
     let marker = find_start(&input, 4)?;
-    println!("Marker found at {}!", marker.clone());
+    println!("[Part 1] Marker found at {}!", marker.clone());
 
     // Part 2
     let marker = find_start(&input, 14)?;
-    println!("Marker found at {}!", marker.clone());
+    println!("[Part 2] Marker found at {}!", marker.clone());
 
     Ok(())
 }
